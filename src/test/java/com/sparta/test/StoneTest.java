@@ -1,20 +1,31 @@
 package com.sparta.test;
-
-import com.sparta.ap.MovieClassifications;
+import com.sparta.ap.operators.StoneMethods;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 public class StoneTest {
-    @Test
-    @DisplayName("Given an weight is 156, film category should be No film is available")
-    public void filmCategory_NoFilmIsAvailable(){
+    @ParameterizedTest
+    @ValueSource(ints =156 )
+    @DisplayName("Given the weight is 156, no of stones should be 11")
+    public void givenWeight_returns11(){
         //Arrange
-        var age = 2;
-        var expectedClassification = "No film is available.";
+        var expectedResult = 11;
         //Act
-        var result = MovieClassifications.availableClassifications(age);
+        var result = StoneMethods.getStones(156);
         //Assert
-        Assertions.assertEquals(expectedClassification, result);
+        Assertions.assertEquals(expectedResult, result);
+    }
+    @ParameterizedTest
+    @ValueSource(ints =156 )
+    @DisplayName("Given the weight is 156, no of pounds should be 2")
+    public void givenWeight_returns2(){
+        //Arrange
+        var expectedResult = 2;
+        //Act
+        var result = StoneMethods.getPounds(156);
+        //Assert
+        Assertions.assertEquals(expectedResult, result);
     }
 }
