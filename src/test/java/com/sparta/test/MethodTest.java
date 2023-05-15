@@ -5,6 +5,8 @@ import com.sparta.ap.operators.StoneMethods;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import java.time.LocalDate;
@@ -35,12 +37,11 @@ public class MethodTest {
         Assertions.assertEquals(expectedResult, result);
     }
     @ParameterizedTest
-    @ValueSource(ints = {5,6,90})
+    @CsvSource({"5,2", "6,1", "90,40"})
     @DisplayName("Given the value 10 and 5, result should be TRUE")
-    public void isHigher_returnsTrue(int x){
+    public void isHigher_returnsTrue(int x,int y){
         //Arrange
         var expectedResult = true;
-        int y = 1;
         //Act
         var result = MethodExercise.isHigher(x,y);
         //Assert
