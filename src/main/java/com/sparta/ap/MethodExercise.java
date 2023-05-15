@@ -17,6 +17,7 @@ public class MethodExercise {
 
         //Problem 4
         int n = 5;
+        sequence(n);
 
         //Problem 5
         LocalDate date = LocalDate.of(2023,11,12);
@@ -24,15 +25,15 @@ public class MethodExercise {
         System.out.println(noOfDays);
     }
 
-    static int doubleIt(int num) {
+    public static int doubleIt(int num) {
         return num * 2;
     }
 
-    static int calculate(int x) {
+   public static int calculate(int x) {
         return (x * 7) + 2;
     }
 
-    static boolean isHigher(int x, int y) {
+   public static boolean isHigher(int x, int y) {
         if (x > y) {
             return true;
         } else {
@@ -40,12 +41,12 @@ public class MethodExercise {
         }
     }
 
-    static void sequence(int n) {
+    public static void sequence(int n) {
         for (int i = 1; i <= n; i++) {
             System.out.println(i);
         }
     }
-    static int daysBetweenTwoDates(LocalDate date){
+    public static int daysBetweenTwoDates(LocalDate date){
         LocalDate currentDate = LocalDate.now();
         return date.getDayOfYear()- currentDate.getDayOfYear();
     }

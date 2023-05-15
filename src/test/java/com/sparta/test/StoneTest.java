@@ -9,22 +9,22 @@ public class StoneTest {
     @ParameterizedTest
     @ValueSource(ints =156 )
     @DisplayName("Given the weight is 156, no of stones should be 11")
-    public void givenWeight_returns11(){
+    public void givenWeight_returns11(int weight){
         //Arrange
         var expectedResult = 11;
         //Act
-        var result = StoneMethods.getStones(156);
+        var result = StoneMethods.getStones(weight);
         //Assert
         Assertions.assertEquals(expectedResult, result);
     }
     @ParameterizedTest
     @ValueSource(ints =156 )
     @DisplayName("Given the weight is 156, no of pounds should be 2")
-    public void givenWeight_returns2(){
+    public void givenWeight_returns2(int weight){
         //Arrange
         var expectedResult = 2;
         //Act
-        var result = StoneMethods.getPounds(156);
+        var result = StoneMethods.getPounds(weight);
         //Assert
         Assertions.assertEquals(expectedResult, result);
     }
